@@ -28,13 +28,13 @@ $categories = array(
 );
 
 
-function searchCategory(&$dataset, $id)
+function searchCategory(&$categories, $id)
 {
     global $result;
-    foreach ($dataset as $key => $value) {
+    foreach ($categories as $key => $value) {
         if ($value['id'] != $id) {
-            if (isset($dataset[$key]['children'])) {
-                searchCategory($dataset[$key]['children'], $id);
+            if (isset($categories[$key]['children'])) {
+                searchCategory($categories[$key]['children'], $id);
             }
         } else {
             $result = $value['title'];

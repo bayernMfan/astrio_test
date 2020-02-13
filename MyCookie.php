@@ -49,7 +49,7 @@ class MyCookie //sinlgleton
 
     public static function getCookie($key)
     {
-        return $_COOKIE[$key] ?? null;
+        return $_COOKIE[$key] ?? null;//if isset returns value else null
     }
 
     public static function setCookie($key, $value, $time = 31622400)
